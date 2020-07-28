@@ -38,7 +38,7 @@ document.getElementById("clear").addEventListener("click", function () {
 
 // Pin Matching
 document.getElementById("submit").addEventListener("click", function () {
-  var submitChance = parseInt (document.getElementById("submit-chance").innerHTML); // chance of input password
+  var submitChance = parseInt(document.getElementById("submit-chance").innerHTML); // chance of input password
   const randNumber = document.getElementById("disply-pin").value;
   const inputedNumber = document.getElementById("input-pin").value;
 
@@ -46,18 +46,20 @@ document.getElementById("submit").addEventListener("click", function () {
     alert("Doesn't Empty any Field...");
   }
   else if (randNumber == inputedNumber) {
+    document.getElementById("notify-dont-match").style.display = "none";
     document.getElementById("notify-match").style.display = "block";
-      document.getElementById("disply-pin").value = '';
-  document.getElementById("input-pin").value = '';
+    document.getElementById("submit-chance").innerHTML = 3;
+    document.getElementById("disply-pin").value = '';
+    document.getElementById("input-pin").value = '';
   }
   else {
     document.getElementById("notify-dont-match").style.display = "block";
     submitChance--; // reduce 
     document.getElementById("submit-chance").innerHTML = submitChance;
-    if(submitChance == 0){ // disabled all feature
+    if (submitChance == 0) { // disabled all feature
       var submitButton = document.getElementById("submit");
       var pinGenaretorButton = document.getElementById("generate-pin");
-      pinGenaretorButton.disabled = true; 
+      pinGenaretorButton.disabled = true;
       pinGenaretorButton.style.background = "red";
       pinGenaretorButton.style.transition = ".5s";
 
@@ -79,6 +81,3 @@ document.getElementById("backspace").addEventListener("click", function () {
     document.getElementById("input-pin").value = presentValue;
   }
 });
-
-
-
