@@ -105,8 +105,24 @@ color: #E0B612;
     color: #FF3C5F;
     margin-top: 10px;
 }
-
-
 #notify-dont-match,#notify-match{
     display: none;
+}
+.button{
+    transition: .3s;
+}
+.button:hover{
+    background-color: #495BC3;
+}
+#clear:hover{
+    background-color: red;
+}
+#backspace:hover{
+    background-color: orange;
+}
+#disply-pin::placeholder,#input-pin::placeholder{
+    font-size: 18px;
+    line-height: 100px;
+    text-transform: capitalize;
+    color: rgb(190, 120, 40);
 }
